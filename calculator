@@ -1,0 +1,32 @@
+print("Welcome to the weight and balance application!")
+print("Disclaimer, for performance and weight and balance charts, please refer to your POH")
+
+basic_empty_weight = float(input("Please enter basic empty weight:"))
+empty_weight_arm = float(input("Empty weight arm:"))
+empty_weight_moment = basic_empty_weight * empty_weight_arm
+
+front_seats_total = float(input("Please enter pilot and co pilot combined wight:"))
+front_seats_arm = float(input("Front seat arm:"))
+front_seat_moment = front_seats_arm * front_seats_total
+
+rear_seat_total = float(input("Rear seat total:"))
+rear_seat_arm = float(input("Rear seat arm:"))
+rear_seat_moment = rear_seat_total * rear_seat_arm
+
+baggage_area_total = float(input("Baggage total:"))
+baggage_area_arm = float(input("Baggage area arm:"))
+baggage_area_moment = baggage_area_total * baggage_area_arm
+
+fuel_gallons = float(input("Fuel in gallons:"))
+fuel_weight = fuel_gallons * 6
+fuel_arm = float(input("Fuel arm:"))
+fuel_moment = fuel_weight * fuel_arm
+
+total_weight = basic_empty_weight + front_seats_total + rear_seat_total + baggage_area_total + fuel_weight
+
+total_moment = empty_weight_moment + front_seat_moment + rear_seat_moment + baggage_area_moment + fuel_moment
+
+total_cg = total_moment / total_weight
+
+print("Your total weight is", total_weight)
+print("Your total CG is", total_cg)
